@@ -1,0 +1,8 @@
+title: AMP Project Documentation
+description: YALA
+baseurl: ""
+exclude: ["_scripts"]
+
+markdown: kramdown
+sass:
+  style: compressed
