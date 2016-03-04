@@ -1,6 +1,6 @@
 title: AMP Project Documentation
 description: YALA
-baseurl: ""
+baseurl: "/amp-homepage"
 exclude: ["_scripts"]
 
 markdown: kramdown
