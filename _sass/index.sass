@@ -1,0 +1,149 @@
+.clients,
+.topics,
+.tools
+  align-items: center
+  display: flex
+  li
+    align-items: center
+    display: flex
+    & + li
+      margin-left: 10px
+
+.hello
+  height: 100vh
+  overflow: hidden
+  position: relative
+  width: 100%
+  .hello-next
+    bottom: 0
+    display: none
+    height: 60px
+    left: 0
+    line-height: 60px
+    position: absolute
+    text-align: center
+    width: 100%
+    a
+      display: block
+  .hello-background,
+  .hello-screenshot
+    +overlay
+    bottom: auto
+    display: none
+    height: 600px
+    left: auto
+    margin-top: -300px
+    position: absolute
+    right: -25%
+    top: 50%
+    width: 100%
+  .hello-content
+    align-items: center
+    display: flex
+    height: 100vh
+    min-height: 600px
+    justify-content: center
+    position: relative
+    width: 100%
+    z-index: 1
+  .hello-screenshot
+    amp-img
+      animation: jelly-pop 1000ms 1000ms linear both
+      left: 50%
+      opacity: 0
+      position: absolute
+      top: 50%
+  .hello-text
+    padding: 0 40px
+    position: relative
+    .title
+      color: $text
+      margin-bottom: $size-h1
+      a
+        +grow($improbable)
+        color: white
+        padding: 0 0.25em 0.05em
+        white-space: nowrap
+        &:before
+          border-radius: 0
+          opacity: 1
+        span
+          position: relative
+        &:hover
+          &:before
+            bottom: -10px
+            left: -10px
+            right: -10px
+            top: -10px
+      strong
+        font-family: $font-family-serif
+        font-weight: bold
+        font-weight: 900
+      @media screen and (min-height: 400px) and (min-width: 600px)
+        font-size: $size-h1
+      @media screen and (min-height: 600px) and (min-width: 800px)
+        font-size: $size-h1-desktop
+      @media screen and (min-height: 800px) and (min-width: 1000px)
+        font-size: $size-h1-widescreen
+    .subtitle
+      margin-top: 20px
+  &:first-child
+    .hello-text
+      padding-top: 60px
+  &.hello-improbable
+    .hello-background
+      background-image: radial-gradient(ellipse farthest-side at 29% 29%, saturate($improbable, 100%), saturate(lighten($improbable, 10%), 100%))
+      +hello-gradient($improbable, lighten($improbable, 10%))
+    .hello-screenshot amp-img
+      height: 275px
+      margin: -153px 0 0 -219px
+  &.hello-marksheet
+    .hello-background
+      +hello-gradient($marksheet, $marksheet-dark)
+    .hello-screenshot amp-img
+      height: 322px
+      margin: -172px 0 0 -334px
+    .title a
+      +grow($marksheet)
+      &:before
+        border-radius: 0
+        opacity: 1
+  &.hello-ivan-ballini
+    .hello-background
+      +hello-gradient($brique, $beige)
+    .hello-screenshot amp-img
+      height: 408px
+      margin: -261px 0 0 -270px
+    .title a
+      +grow($brique)
+      &:before
+        border-radius: 0
+        opacity: 1
+  +on($desktop)
+    .hello-background,
+    .hello-screenshot
+      display: block
+    .hello-text
+      .title
+        padding-right: 50%
+      .follow
+        .title
+          padding-right: 0
+
+.line-drawing
+  display: none
+  transition: opacity 0.5s
+  path
+    fill: none
+    stroke: $black
+    stroke-width: 1
+    &.line-round
+      stroke-linecap: round
+  +on($desktop)
+    background: white
+    display: block
+    margin-top: -300px
+    mix-blend-mode: screen
+    position: absolute
+    right: -25%
+    top: 50%
